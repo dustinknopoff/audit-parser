@@ -17,6 +17,11 @@ pub struct AuditToJson {
     ip_courses: Vec<CompleteCourse>,
     required_nupaths: Vec<NUPath>,
     required_courses: Vec<Requirement>,
+    earned_hours: f32,
+    courses_taken: isize,
+    attempted_hours: f32,
+    points: f32,
+    gpa: f32,
 }
 
 impl AuditToJson {
@@ -32,6 +37,11 @@ impl AuditToJson {
             ip_nupaths: vec![],
             required_courses: vec![],
             required_nupaths: vec![],
+            earned_hours: 0_f32,
+            courses_taken: 0,
+            attempted_hours: 0_f32,
+            points: 0_f32,
+            gpa: 0_f32,
         }
     }
 }
@@ -49,7 +59,7 @@ impl AuditParser {
     pub fn parse_audit(file: &str) -> Result<AuditToJson, PestError<Rule>> {
         let main = Self::parse(Rule::main, file)?.next().unwrap();
         let mut out = AuditToJson::new();
-        fn parse_inner(out: &mut AuditToJson, rule: Pair<Rule>) {
+        fn parse_inner(mut out: &mut AuditToJson, rule: Pair<Rule>) {
             match rule.as_rule() {
                 Rule::GRAD_PARSER => {
                     let date = rule
@@ -109,7 +119,9 @@ impl AuditParser {
                         out.complete_courses.push(course);
                     }
                 }
-
+                Rule::INFO => {
+                    AuditParser::extract_info(&mut out, rule);
+                }
                 _ => eprintln!("SKipping"),
             }
         }
@@ -217,6 +229,59 @@ impl AuditParser {
         }
 
         requirements
+    }
+
+    fn extract_info(audit: &mut AuditToJson, rule: Pair<Rule>) {
+        for pair in rule.into_inner() {
+            match pair.as_rule() {
+                Rule::EARNED_HOURS => {
+                    audit.earned_hours = pair
+                        .into_inner()
+                        .next()
+                        .unwrap() // Reach in for FLOAT
+                        .as_str()
+                        .parse::<f32>()
+                        .unwrap();
+                }
+                Rule::COURSES_TAKEN => {
+                    audit.courses_taken = pair
+                        .into_inner()
+                        .next()
+                        .unwrap() // Reach in for FLOAT
+                        .as_str()
+                        .parse::<isize>()
+                        .unwrap();
+                }
+                Rule::ATTEMPTED_HOURS => {
+                    audit.attempted_hours = pair
+                        .into_inner()
+                        .next()
+                        .unwrap() // Reach in for FLOAT
+                        .as_str()
+                        .parse::<f32>()
+                        .unwrap();
+                }
+                Rule::POINTS => {
+                    audit.points = pair
+                        .into_inner()
+                        .next()
+                        .unwrap() // Reach in for FLOAT
+                        .as_str()
+                        .parse::<f32>()
+                        .unwrap();
+                }
+                Rule::GPA => {
+                    audit.gpa = pair
+                        .into_inner()
+                        .next()
+                        .unwrap() // Reach in for FLOAT
+                        .as_str()
+                        .parse::<f32>()
+                        .unwrap();
+                }
+                _ => unreachable!(),
+            }
+        }
     }
 
     fn get_termid(season: Season, year: isize) -> isize {
