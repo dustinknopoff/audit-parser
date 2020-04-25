@@ -125,13 +125,16 @@ impl AuditParser {
                 _ => eprintln!("SKipping"),
             }
         }
-        for rule in main.into_inner() {
+        main.into_inner().for_each(|rule| {
             parse_inner(&mut out, rule);
-        }
+        });
         Ok(out)
     }
 
     fn extract_nupath(rules: Pair<Rule>) -> (Option<Status>, Option<NUPath>) {
+        // NUPATH has 3 significant Rules: STATUS, NUPATH_NAME, NUPATH_ID.
+        // Right now, we only care about STATUS and NUPATH_ID.
+        // So, we iterate through all children of NUPATH, skipping the ones we don't use.
         rules.into_inner().fold((None, None), |acc, pair| {
             let (status, id): (Option<Status>, Option<NUPath>) = acc;
             match pair.as_rule() {
@@ -152,40 +155,38 @@ impl AuditParser {
     fn extract_course(rules: Pair<Rule>) -> (CompleteCourse, bool) {
         let mut course = CompleteCourse::default();
         let mut in_progress = false;
-        for pair in rules.into_inner() {
-            match pair.as_rule() {
-                Rule::YEAR => {
-                    let year_str = pair.as_str();
-                    let season_str: String = year_str.chars().take(2).collect();
-                    let year_str: String = year_str.chars().skip(2).collect();
-                    course.season = season_str.try_into().unwrap();
-                    course.year = year_str.parse::<isize>().unwrap();
-                    course.term_id = Self::get_termid(course.season, course.year);
-                }
-                Rule::COURSE => {
-                    let subject = pair.as_str().to_string();
-                    course.subject = subject;
-                }
-                Rule::CREDITS => {
-                    let credits = pair.as_str();
-                    course.credit_hours = credits.parse::<f32>().unwrap();
-                }
-                Rule::COURSE_NAME => {
-                    let name = pair.as_str().to_string();
-                    course.name = name;
-                }
-                Rule::MAYBE_IP => {
-                    let as_str = pair.as_str().to_string();
-                    if as_str.contains("IP") {
-                        in_progress = false;
-                    }
-                    if as_str.contains("(HON)") {
-                        course.hon = true;
-                    }
-                }
-                _ => unreachable!(),
+        rules.into_inner().for_each(|pair| match pair.as_rule() {
+            Rule::YEAR => {
+                let year_str = pair.as_str();
+                let season_str: String = year_str.chars().take(2).collect();
+                let year_str: String = year_str.chars().skip(2).collect();
+                course.season = season_str.try_into().unwrap();
+                course.year = year_str.parse::<isize>().unwrap();
+                course.term_id = Self::get_termid(course.season, course.year);
             }
-        }
+            Rule::COURSE => {
+                let subject = pair.as_str().to_string();
+                course.subject = subject;
+            }
+            Rule::CREDITS => {
+                let credits = pair.as_str();
+                course.credit_hours = credits.parse::<f32>().unwrap();
+            }
+            Rule::COURSE_NAME => {
+                let name = pair.as_str().to_string();
+                course.name = name;
+            }
+            Rule::MAYBE_IP => {
+                let as_str = pair.as_str().to_string();
+                if as_str.contains("IP") {
+                    in_progress = false;
+                }
+                if as_str.contains("(HON)") {
+                    course.hon = true;
+                }
+            }
+            _ => unreachable!(),
+        });
         (course, in_progress)
     }
 
@@ -194,45 +195,40 @@ impl AuditParser {
         let mut prev_id: bool = false;
         let mut last_subject = None;
 
-        for pair in rules.into_inner() {
-            match pair.as_rule() {
-                Rule::COURSE => {
-                    let mut requirement = Requirement::default();
-                    for pair in pair.into_inner() {
-                        match pair.as_rule() {
-                            Rule::COURSE_NUMBER if prev_id == false => {
-                                requirement.class_id = AuditParser::to_num(pair.as_str()).unwrap();
-                            }
-                            Rule::COURSE_NUMBER if prev_id == true => {
-                                requirement = requirements.pop().unwrap();
-                                requirement.class_id_2 =
-                                    Some(AuditParser::to_num(pair.as_str()).unwrap());
-                            }
-                            Rule::ID => {
-                                requirement.subject = Some(pair.as_str().trim().to_string());
-                                last_subject = requirement.subject.clone();
-                            }
-                            _ => unreachable!(),
-                        }
+        rules.into_inner().for_each(|pair| match pair.as_rule() {
+            Rule::COURSE => {
+                let mut requirement = Requirement::default();
+                pair.into_inner().for_each(|pair| match pair.as_rule() {
+                    Rule::COURSE_NUMBER if prev_id == false => {
+                        requirement.class_id = AuditParser::to_num(pair.as_str()).unwrap();
                     }
-                    if requirement.subject.is_none() {
-                        requirement.subject = last_subject.clone();
+                    Rule::COURSE_NUMBER if prev_id == true => {
+                        requirement = requirements.pop().unwrap();
+                        requirement.class_id_2 = Some(AuditParser::to_num(pair.as_str()).unwrap());
                     }
-                    requirements.push(requirement);
-                    prev_id = false;
+                    Rule::ID => {
+                        requirement.subject = Some(pair.as_str().trim().to_string());
+                        last_subject = requirement.subject.clone();
+                    }
+                    _ => unreachable!(),
+                });
+                if requirement.subject.is_none() {
+                    requirement.subject = last_subject.clone();
                 }
-                Rule::TO => {
-                    prev_id = true;
-                }
-                _ => unreachable!(),
+                requirements.push(requirement);
+                prev_id = false;
             }
-        }
+            Rule::TO => {
+                prev_id = true;
+            }
+            _ => unreachable!(),
+        });
 
         requirements
     }
 
     fn extract_info(audit: &mut AuditToJson, rule: Pair<Rule>) {
-        for pair in rule.into_inner() {
+        rule.into_inner().for_each(|pair| {
             match pair.as_rule() {
                 Rule::EARNED_HOURS => {
                     audit.earned_hours = pair
@@ -281,7 +277,7 @@ impl AuditParser {
                 }
                 _ => unreachable!(),
             }
-        }
+        });
     }
 
     fn get_termid(season: Season, year: isize) -> isize {
