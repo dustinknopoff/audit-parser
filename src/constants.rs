@@ -3,7 +3,7 @@ use std::fmt::Display;
 
 pub mod abbreviations {
     use super::{Deserialize, Display, Serialize};
-    use std::convert::TryFrom;
+    use std::{borrow::Cow, convert::TryFrom};
     #[derive(Debug, Copy, Clone, Serialize, Deserialize, PartialEq)]
     pub enum NUPath {
         ND,
@@ -99,11 +99,11 @@ pub mod abbreviations {
         }
     }
 
-    impl TryFrom<String> for Season {
+    impl<'a> TryFrom<Cow<'a, str>> for Season {
         type Error = String;
-        fn try_from(value: String) -> Result<Self, Self::Error> {
+        fn try_from(value: Cow<'_, str>) -> Result<Self, Self::Error> {
             use Season::*;
-            match value.as_str() {
+            match value.as_ref() {
                 "FL" => Ok(FL),
                 "SP" => Ok(SP),
                 "S1" => Ok(S1),

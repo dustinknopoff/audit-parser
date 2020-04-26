@@ -4,11 +4,12 @@ use crate::constants::{
 };
 use chrono::{NaiveDate, Utc};
 use serde::{Deserialize, Serialize};
+use std::borrow::Cow;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct AuditToJson {
-    majors: Vec<String>,
-    minors: Vec<String>,
+pub struct AuditToJson<'a> {
+    majors: Vec<Cow<'a, str>>,
+    minors: Vec<Cow<'a, str>>,
     audit_year: isize,
     grad_date: NaiveDate,
     complete_nupaths: Vec<NUPath>,
@@ -24,7 +25,7 @@ pub struct AuditToJson {
     gpa: f32,
 }
 
-impl AuditToJson {
+impl AuditToJson<'_> {
     pub fn new() -> Self {
         Self {
             majors: vec![],
@@ -56,10 +57,10 @@ use std::convert::TryInto;
 pub struct AuditParser;
 
 impl AuditParser {
-    pub fn parse_audit(file: &str) -> Result<AuditToJson, PestError<Rule>> {
+    pub fn parse_audit(file: &'_ str) -> Result<AuditToJson<'_>, PestError<Rule>> {
         let main = Self::parse(Rule::main, file)?.next().unwrap();
         let mut out = AuditToJson::new();
-        fn parse_inner(mut out: &mut AuditToJson, rule: Pair<'_, Rule>) {
+        fn parse_inner<'a>(mut out: &mut AuditToJson<'a>, rule: Pair<'a, Rule>) {
             match rule.as_rule() {
                 Rule::GRAD_PARSER => {
                     let date = rule
@@ -81,8 +82,8 @@ impl AuditParser {
                     let mut majors = rule
                         .as_str()
                         .split("\n")
-                        .map(|s| s.to_string())
-                        .collect::<Vec<String>>();
+                        .map(Cow::from)
+                        .collect::<Vec<Cow<'_, str>>>();
                     out.majors.append(&mut majors);
                 }
                 Rule::DATE => {
@@ -158,8 +159,8 @@ impl AuditParser {
         rules.into_inner().for_each(|pair| match pair.as_rule() {
             Rule::YEAR => {
                 let year_str = pair.as_str();
-                let season_str: String = year_str.chars().take(2).collect();
-                let year_str: String = year_str.chars().skip(2).collect();
+                let season_str: Cow<'_, str> = year_str.chars().take(2).collect();
+                let year_str: Cow<'_, str> = year_str.chars().skip(2).collect();
                 course.season = season_str.try_into().unwrap();
                 course.year = year_str.parse::<isize>().unwrap();
                 course.term_id = Self::get_termid(course.season, course.year);
@@ -227,7 +228,7 @@ impl AuditParser {
         requirements
     }
 
-    fn extract_info(audit: &mut AuditToJson, rule: Pair<'_, Rule>) {
+    fn extract_info(audit: &mut AuditToJson<'_>, rule: Pair<'_, Rule>) {
         rule.into_inner().for_each(|pair| {
             match pair.as_rule() {
                 Rule::EARNED_HOURS => {
