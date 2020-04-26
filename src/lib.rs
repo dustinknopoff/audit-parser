@@ -8,6 +8,43 @@ mod constants;
 mod html_parser;
 use chrono::prelude::*;
 
+pub mod ffi {
+    use crate::html_parser::AuditParser;
+    use std::{
+        ffi::{CStr, CString},
+        os::raw::c_char,
+    };
+
+    #[no_mangle]
+    pub extern "C" fn parse_web_audit_ffi(src: *const c_char) -> *mut c_char {
+        let c_str = unsafe { CStr::from_ptr(src) };
+        let recipient = match c_str.to_str() {
+            Err(_) => "failed to convert from c string to rust string",
+            Ok(string) => string,
+        };
+        let contents = AuditParser::parse_audit(recipient);
+        let as_json = match serde_json::to_string_pretty(&contents.unwrap()) {
+            Err(_) => "failed to convert to json".into(),
+            Ok(val) => val,
+        };
+        CString::new(as_json)
+            .expect("Could not convert in to cstring.")
+            .into_raw()
+    }
+
+    #[no_mangle]
+    pub extern "C" fn free_as_json(s: *mut c_char) {
+        unsafe {
+            if s.is_null() {
+                return;
+            }
+            CString::from_raw(s)
+        };
+    }
+}
+
+pub use ffi::*;
+
 #[cfg(test)]
 mod tests {
     use super::*;
