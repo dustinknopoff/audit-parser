@@ -59,7 +59,7 @@ impl AuditParser {
     pub fn parse_audit(file: &str) -> Result<AuditToJson, PestError<Rule>> {
         let main = Self::parse(Rule::main, file)?.next().unwrap();
         let mut out = AuditToJson::new();
-        fn parse_inner(mut out: &mut AuditToJson, rule: Pair<Rule>) {
+        fn parse_inner(mut out: &mut AuditToJson, rule: Pair<'_, Rule>) {
             match rule.as_rule() {
                 Rule::GRAD_PARSER => {
                     let date = rule
@@ -131,7 +131,7 @@ impl AuditParser {
         Ok(out)
     }
 
-    fn extract_nupath(rules: Pair<Rule>) -> (Option<Status>, Option<NUPath>) {
+    fn extract_nupath(rules: Pair<'_, Rule>) -> (Option<Status>, Option<NUPath>) {
         // NUPATH has 3 significant Rules: STATUS, NUPATH_NAME, NUPATH_ID.
         // Right now, we only care about STATUS and NUPATH_ID.
         // So, we iterate through all children of NUPATH, skipping the ones we don't use.
@@ -152,7 +152,7 @@ impl AuditParser {
     }
 
     /// Returns complete course and bool representing `ifInProgress`
-    fn extract_course(rules: Pair<Rule>) -> (CompleteCourse, bool) {
+    fn extract_course(rules: Pair<'_, Rule>) -> (CompleteCourse, bool) {
         let mut course = CompleteCourse::default();
         let mut in_progress = false;
         rules.into_inner().for_each(|pair| match pair.as_rule() {
@@ -190,7 +190,7 @@ impl AuditParser {
         (course, in_progress)
     }
 
-    fn extract_course_list(rules: Pair<Rule>) -> Vec<Requirement> {
+    fn extract_course_list(rules: Pair<'_, Rule>) -> Vec<Requirement> {
         let mut requirements = Vec::new();
         let mut prev_id: bool = false;
         let mut last_subject = None;
@@ -227,7 +227,7 @@ impl AuditParser {
         requirements
     }
 
-    fn extract_info(audit: &mut AuditToJson, rule: Pair<Rule>) {
+    fn extract_info(audit: &mut AuditToJson, rule: Pair<'_, Rule>) {
         rule.into_inner().for_each(|pair| {
             match pair.as_rule() {
                 Rule::EARNED_HOURS => {

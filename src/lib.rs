@@ -1,6 +1,8 @@
 #![allow(unused)]
+//!
+#![warn(missing_debug_implementations, rust_2018_idioms, missing_docs)]
 
-extern crate pest;
+use pest;
 #[macro_use]
 extern crate pest_derive;
 
@@ -8,6 +10,7 @@ mod constants;
 mod html_parser;
 use chrono::prelude::*;
 
+/// Module for FFI Receiving/Freeing
 pub mod ffi {
     use crate::html_parser::AuditParser;
     use std::{
@@ -15,6 +18,7 @@ pub mod ffi {
         os::raw::c_char,
     };
 
+    /// Given a pointer to a C-String, parse a NEU Web Audit
     #[no_mangle]
     pub extern "C" fn parse_web_audit_ffi(src: *const c_char) -> *mut c_char {
         let c_str = unsafe { CStr::from_ptr(src) };
@@ -33,6 +37,7 @@ pub mod ffi {
     }
 
     #[no_mangle]
+    /// Free a C-String
     pub extern "C" fn free_as_json(s: *mut c_char) {
         unsafe {
             if s.is_null() {
