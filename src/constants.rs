@@ -431,10 +431,10 @@ pub mod parser_types {
 
     impl PartialEq for CompleteCourse {
         fn eq(&self, other: &CompleteCourse) -> bool {
-            return self.class_id == other.class_id
+            self.class_id == other.class_id
                 && self.subject == other.subject
                 && self.term_id == other.term_id
-                && self.name == other.name;
+                && self.name == other.name
         }
     }
 

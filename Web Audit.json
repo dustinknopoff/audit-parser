@@ -1,0 +1,1030 @@
+{
+  "majors": [
+    "BS Computer Science and Design",
+    "Computer Science"
+  ],
+  "minors": [],
+  "audit_year": 2020,
+  "grad_date": "2021-05-20",
+  "complete_nupaths": [
+    "ND",
+    "EI",
+    "IC",
+    "FQ",
+    "SI",
+    "AD",
+    "DD",
+    "ER",
+    "WF",
+    "EX",
+    "ND",
+    "EI",
+    "IC",
+    "FQ",
+    "SI",
+    "AD",
+    "DD",
+    "ER",
+    "WF",
+    "EX"
+  ],
+  "complete_courses": [
+    {
+      "hon": false,
+      "subject": "MATH1365",
+      "class_id": 0,
+      "name": "ations",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "THTR1170",
+      "class_id": 0,
+      "name": "he Eloquent Presenter",
+      "credit_hours": 1.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ARTG1250",
+      "class_id": 0,
+      "name": "n Process Context/System",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 17,
+      "term_id": 201730
+    },
+    {
+      "hon": false,
+      "subject": "ARTF1122",
+      "class_id": 0,
+      "name": "undtls: Surface/Drawing",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 17,
+      "term_id": 201810
+    },
+    {
+      "hon": false,
+      "subject": "ARTF2223",
+      "class_id": 0,
+      "name": "ndtls: Experience/Drawin",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 18,
+      "term_id": 201830
+    },
+    {
+      "hon": false,
+      "subject": "ARTG2250",
+      "class_id": 0,
+      "name": "raphy 1",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 18,
+      "term_id": 201830
+    },
+    {
+      "hon": false,
+      "subject": "ARTG2260",
+      "class_id": 0,
+      "name": "ramming Basics",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 18,
+      "term_id": 201910
+    },
+    {
+      "hon": false,
+      "subject": "ARTG3350",
+      "class_id": 0,
+      "name": "raphy 2",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 18,
+      "term_id": 201910
+    },
+    {
+      "hon": false,
+      "subject": "ARTG3451",
+      "class_id": 0,
+      "name": "rmation Design 1",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 19,
+      "term_id": 202010
+    },
+    {
+      "hon": false,
+      "subject": "ARTH1100",
+      "class_id": 0,
+      "name": "active Media and Society",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 17,
+      "term_id": 201810
+    },
+    {
+      "hon": false,
+      "subject": "ARTG4700",
+      "class_id": 0,
+      "name": "nteraction Team Project 1",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ARTG2400",
+      "class_id": 0,
+      "name": "raction Dsgn 1: Responsiv",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 19,
+      "term_id": 202010
+    },
+    {
+      "hon": false,
+      "subject": "ARTG3700",
+      "class_id": 0,
+      "name": "nteraction Dsgn 2: Mobile",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ARTG2260",
+      "class_id": 0,
+      "name": "ramming Basics",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 18,
+      "term_id": 201910
+    },
+    {
+      "hon": false,
+      "subject": "PHIL1145",
+      "class_id": 0,
+      "name": "nology and Human Values",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 17,
+      "term_id": 201810
+    },
+    {
+      "hon": false,
+      "subject": "ENGW1111",
+      "class_id": 0,
+      "name": "ENG LANG/COMP",
+      "credit_hours": 4.0,
+      "season": "S2",
+      "year": 16,
+      "term_id": 201660
+    },
+    {
+      "hon": false,
+      "subject": "ENGW3302",
+      "class_id": 0,
+      "name": "dvanced Writing in Tech Prof",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ARTF2220",
+      "class_id": 0,
+      "name": "duction to Digital Art:",
+      "credit_hours": 3.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "MATH1365",
+      "class_id": 0,
+      "name": "ations",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "ARTG1250",
+      "class_id": 0,
+      "name": "n Process Context/System",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 17,
+      "term_id": 201730
+    },
+    {
+      "hon": false,
+      "subject": "ARTF1122",
+      "class_id": 0,
+      "name": "undtls: Surface/Drawing",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 17,
+      "term_id": 201810
+    },
+    {
+      "hon": false,
+      "subject": "ARTH1100",
+      "class_id": 0,
+      "name": "active Media and Society",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 17,
+      "term_id": 201810
+    },
+    {
+      "hon": false,
+      "subject": "PHIL1145",
+      "class_id": 0,
+      "name": "nology and Human Values",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 17,
+      "term_id": 201810
+    },
+    {
+      "hon": false,
+      "subject": "ARTF2223",
+      "class_id": 0,
+      "name": "ndtls: Experience/Drawin",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 18,
+      "term_id": 201830
+    },
+    {
+      "hon": false,
+      "subject": "ARTG2250",
+      "class_id": 0,
+      "name": "raphy 1",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 18,
+      "term_id": 201830
+    },
+    {
+      "hon": false,
+      "subject": "ARTG2260",
+      "class_id": 0,
+      "name": "ramming Basics",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 18,
+      "term_id": 201910
+    },
+    {
+      "hon": false,
+      "subject": "ARTG3350",
+      "class_id": 0,
+      "name": "raphy 2",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 18,
+      "term_id": 201910
+    },
+    {
+      "hon": false,
+      "subject": "ARTG2400",
+      "class_id": 0,
+      "name": "raction Dsgn 1: Responsiv",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 19,
+      "term_id": 202010
+    },
+    {
+      "hon": false,
+      "subject": "ARTG3451",
+      "class_id": 0,
+      "name": "rmation Design 1",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 19,
+      "term_id": 202010
+    },
+    {
+      "hon": false,
+      "subject": "ARTG3700",
+      "class_id": 0,
+      "name": "nteraction Dsgn 2: Mobile",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ARTG4700",
+      "class_id": 0,
+      "name": "nteraction Team Project 1",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "THTR1170",
+      "class_id": 0,
+      "name": "he Eloquent Presenter",
+      "credit_hours": 1.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "CHEM1211",
+      "class_id": 0,
+      "name": "stry I",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "CHEM1212",
+      "class_id": 0,
+      "name": "stry I",
+      "credit_hours": 1.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "ENGL1990",
+      "class_id": 0,
+      "name": "acred and Profane in Ame",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "MATH1341",
+      "class_id": 0,
+      "name": "lus I",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "BIOL1111",
+      "class_id": 0,
+      "name": "gy II - Cellular and Mol",
+      "credit_hours": 3.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "MATH1342",
+      "class_id": 0,
+      "name": "lus II",
+      "credit_hours": 3.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1151",
+      "class_id": 0,
+      "name": "N U: PH 131",
+      "credit_hours": 2.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1152",
+      "class_id": 0,
+      "name": "N U: PH 131",
+      "credit_hours": 1.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1153",
+      "class_id": 0,
+      "name": "N U: PH 131",
+      "credit_hours": 1.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "HIST1130",
+      "class_id": 0,
+      "name": "US HISTORY",
+      "credit_hours": 4.0,
+      "season": "S2",
+      "year": 16,
+      "term_id": 201660
+    },
+    {
+      "hon": false,
+      "subject": "CHEM1211",
+      "class_id": 0,
+      "name": "stry I",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "CHEM1212",
+      "class_id": 0,
+      "name": "stry I",
+      "credit_hours": 1.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "ENGL1990",
+      "class_id": 0,
+      "name": "acred and Profane in Ame",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "MATH1341",
+      "class_id": 0,
+      "name": "lus I",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "ARTF2220",
+      "class_id": 0,
+      "name": "duction to Digital Art:",
+      "credit_hours": 3.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "BIOL1111",
+      "class_id": 0,
+      "name": "gy II - Cellular and Mol",
+      "credit_hours": 3.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "MATH1342",
+      "class_id": 0,
+      "name": "lus II",
+      "credit_hours": 3.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1151",
+      "class_id": 0,
+      "name": "N U: PH 131",
+      "credit_hours": 2.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1152",
+      "class_id": 0,
+      "name": "N U: PH 131",
+      "credit_hours": 1.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1153",
+      "class_id": 0,
+      "name": "N U: PH 131",
+      "credit_hours": 1.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "ENGW1111",
+      "class_id": 0,
+      "name": "ENG LANG/COMP",
+      "credit_hours": 4.0,
+      "season": "S2",
+      "year": 16,
+      "term_id": 201660
+    },
+    {
+      "hon": false,
+      "subject": "HIST1130",
+      "class_id": 0,
+      "name": "US HISTORY",
+      "credit_hours": 4.0,
+      "season": "S2",
+      "year": 16,
+      "term_id": 201660
+    },
+    {
+      "hon": false,
+      "subject": "BUSN1990",
+      "class_id": 0,
+      "name": "ess Ethics",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "MATH1365",
+      "class_id": 0,
+      "name": "ations",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1155",
+      "class_id": 0,
+      "name": "cs II",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1156",
+      "class_id": 0,
+      "name": "cs II",
+      "credit_hours": 1.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1157",
+      "class_id": 0,
+      "name": "cs II",
+      "credit_hours": 0.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "CHEM1211",
+      "class_id": 0,
+      "name": "stry I",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 15,
+      "term_id": 201610
+    },
+    {
+      "hon": false,
+      "subject": "ARTG1250",
+      "class_id": 0,
+      "name": "n Process Context/System",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 17,
+      "term_id": 201730
+    },
+    {
+      "hon": false,
+      "subject": "CLTR1504",
+      "class_id": 0,
+      "name": "o to Spanish Culture",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 17,
+      "term_id": 201730
+    },
+    {
+      "hon": false,
+      "subject": "CLTR1504",
+      "class_id": 0,
+      "name": "o to Spanish Culture",
+      "credit_hours": 4.0,
+      "season": "SP",
+      "year": 17,
+      "term_id": 201730
+    },
+    {
+      "hon": false,
+      "subject": "HIST1130",
+      "class_id": 0,
+      "name": "US HISTORY",
+      "credit_hours": 4.0,
+      "season": "S2",
+      "year": 16,
+      "term_id": 201660
+    },
+    {
+      "hon": false,
+      "subject": "PHIL1145",
+      "class_id": 0,
+      "name": "nology and Human Values",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 17,
+      "term_id": 201810
+    },
+    {
+      "hon": false,
+      "subject": "ENGW1111",
+      "class_id": 0,
+      "name": "ENG LANG/COMP",
+      "credit_hours": 4.0,
+      "season": "S2",
+      "year": 16,
+      "term_id": 201660
+    },
+    {
+      "hon": false,
+      "subject": "ARTG4700",
+      "class_id": 0,
+      "name": "nteraction Team Project 1",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ENGW3302",
+      "class_id": 0,
+      "name": "dvanced Writing in Tech Prof",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "op Work Experience",
+      "credit_hours": 0.0,
+      "season": "SP",
+      "year": 19,
+      "term_id": 201930
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "op Work Experience",
+      "credit_hours": 0.0,
+      "season": "SP",
+      "year": 19,
+      "term_id": 201930
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "op Work Experience",
+      "credit_hours": 0.0,
+      "season": "S1",
+      "year": 19,
+      "term_id": 201940
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "-op Work Experience",
+      "credit_hours": 0.0,
+      "season": "SP",
+      "year": 20,
+      "term_id": 202030
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "-op Work Experience",
+      "credit_hours": 0.0,
+      "season": "S1",
+      "year": 20,
+      "term_id": 202040
+    },
+    {
+      "hon": false,
+      "subject": "ARTF2220",
+      "class_id": 0,
+      "name": "duction to Digital Art:",
+      "credit_hours": 3.0,
+      "season": "SP",
+      "year": 16,
+      "term_id": 201630
+    },
+    {
+      "hon": false,
+      "subject": "BUSN1990",
+      "class_id": 0,
+      "name": "ess Ethics",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1155",
+      "class_id": 0,
+      "name": "cs II",
+      "credit_hours": 3.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1156",
+      "class_id": 0,
+      "name": "cs II",
+      "credit_hours": 1.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "PHYS1157",
+      "class_id": 0,
+      "name": "cs II",
+      "credit_hours": 0.0,
+      "season": "FL",
+      "year": 16,
+      "term_id": 201710
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "-op Work Experience",
+      "credit_hours": 0.0,
+      "season": "SP",
+      "year": 20,
+      "term_id": 202030
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "-op Work Experience",
+      "credit_hours": 0.0,
+      "season": "S1",
+      "year": 20,
+      "term_id": 202040
+    },
+    {
+      "hon": false,
+      "subject": "ARTG3700",
+      "class_id": 0,
+      "name": "nteraction Dsgn 2: Mobile",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ARTG4700",
+      "class_id": 0,
+      "name": "nteraction Team Project 1",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "ENGW3302",
+      "class_id": 0,
+      "name": "dvanced Writing in Tech Prof",
+      "credit_hours": 4.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "THTR1170",
+      "class_id": 0,
+      "name": "he Eloquent Presenter",
+      "credit_hours": 1.0,
+      "season": "FL",
+      "year": 20,
+      "term_id": 202110
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "op Work Experience",
+      "credit_hours": 0.0,
+      "season": "SP",
+      "year": 19,
+      "term_id": 201930
+    },
+    {
+      "hon": false,
+      "subject": "COOP3945",
+      "class_id": 0,
+      "name": "op Work Experience",
+      "credit_hours": 0.0,
+      "season": "S1",
+      "year": 19,
+      "term_id": 201940
+    }
+  ],
+  "ip_nupaths": [
+    "WI",
+    "WD",
+    "WI",
+    "WD"
+  ],
+  "ip_courses": [],
+  "required_nupaths": [
+    "CE",
+    "CE"
+  ],
+  "required_courses": [
+    {
+      "class_id": 1123,
+      "subject": "ARTF",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 2224,
+      "subject": "ARTF",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 2251,
+      "subject": "ARTG",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 4550,
+      "subject": "ARTG",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 2401,
+      "subject": "ARTG",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 2252,
+      "subject": "ARTG",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 3450,
+      "subject": "ARTG",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 3462,
+      "subject": "ARTG",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 3463,
+      "subject": "ARTG",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 1120,
+      "subject": "ARTF",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 1121,
+      "subject": "ARTF",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 2220,
+      "subject": "ARTF",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 1124,
+      "subject": "ARTF",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 1101,
+      "subject": "PSYC",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 3452,
+      "subject": "PSYC",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 3464,
+      "subject": "PSYC",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    },
+    {
+      "class_id": 3466,
+      "subject": "PSYC",
+      "num_required": null,
+      "class_id_2": null,
+      "list": []
+    }
+  ],
+  "earned_hours": 129.0,
+  "courses_taken": 42,
+  "attempted_hours": 84.0,
+  "points": 277.3,
+  "gpa": 3.301
+}

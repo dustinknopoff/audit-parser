@@ -81,7 +81,7 @@ impl AuditParser {
                     // Simple rule, just convert to string.
                     let mut majors = rule
                         .as_str()
-                        .split("\n")
+                        .split('\n')
                         .map(Cow::from)
                         .collect::<Vec<Cow<'_, str>>>();
                     out.majors.append(&mut majors);
@@ -200,10 +200,10 @@ impl AuditParser {
             Rule::COURSE => {
                 let mut requirement = Requirement::default();
                 pair.into_inner().for_each(|pair| match pair.as_rule() {
-                    Rule::COURSE_NUMBER if prev_id == false => {
+                    Rule::COURSE_NUMBER if !prev_id => {
                         requirement.class_id = AuditParser::to_num(pair.as_str()).unwrap();
                     }
-                    Rule::COURSE_NUMBER if prev_id == true => {
+                    Rule::COURSE_NUMBER if prev_id => {
                         requirement = requirements.pop().unwrap();
                         requirement.class_id_2 = Some(AuditParser::to_num(pair.as_str()).unwrap());
                     }
@@ -299,6 +299,7 @@ impl AuditParser {
         Self::to_num(term_id.as_str()).unwrap()
     }
 
+    #[allow(clippy::wrong_self_convention)]
     fn to_num(input: &str) -> Result<isize, std::num::ParseIntError> {
         isize::from_str_radix(input, 10)
     }
